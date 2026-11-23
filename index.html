@@ -763,16 +763,29 @@
       
       <div class="space-y-1">
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-limeAccent/10 text-limeAccent text-xs font-mono font-semibold">
-          🎬 Jasa Produksi Lapangan & Store Resmi
+          🎬 Jasa Produksi Visual & Produk Digital Resmi
         </div>
         <h2 class="font-syne font-bold text-3xl text-white">Services & Store Catalog</h2>
-        <p class="text-sm text-zinc-400">Pilih layanan produksi visual atau miliki karya e-book. Klik kartu untuk melihat detail & ketentuan.</p>
+        <p class="text-sm text-zinc-400">Pilih layanan produksi visual profesional, aplikasi produktivitas pintar, atau miliki karya e-book. Klik kartu untuk melihat detail & ketentuan.</p>
+      </div>
+
+      <!-- Tab Filter Kategori Layanan & Toko -->
+      <div class="flex flex-wrap items-center gap-2 pt-1" id="catalog-filter-bar">
+        <button type="button" onclick="filterCatalog('all', this)" class="catalog-filter-btn px-4 py-2 rounded-xl text-xs font-syne font-bold transition-all bg-limeAccent text-pitch shadow-glow-lime-sm">
+          Semua (4)
+        </button>
+        <button type="button" onclick="filterCatalog('service', this)" class="catalog-filter-btn px-4 py-2 rounded-xl text-xs font-syne font-bold transition-all bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/5">
+          Jasa Foto & Video (2)
+        </button>
+        <button type="button" onclick="filterCatalog('digital', this)" class="catalog-filter-btn px-4 py-2 rounded-xl text-xs font-syne font-bold transition-all bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/5">
+          Produk Digital / Web App (2)
+        </button>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         
         <!-- CARD 1: DOKUMENTASI VIDEO (MENGAMBIL GAMBAR DI LAPANGAN + EDITING) -->
-        <div class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-5">
+        <div data-catalog-category="service" class="lg:col-span-7 glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-5">
           <div class="space-y-3">
             <div class="flex items-center justify-between">
               <span class="px-3 py-1 rounded-full bg-limeAccent text-pitch text-xs font-syne font-bold">
@@ -812,7 +825,7 @@
         </div>
 
         <!-- CARD 2: DOKUMENTASI FOTO KEGIATAN -->
-        <div class="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-5">
+        <div data-catalog-category="service" class="lg:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-5">
           <div class="space-y-3">
             <div class="flex items-center justify-between">
               <span class="px-3 py-1 rounded-full bg-white/10 text-white text-xs font-syne font-bold">
@@ -849,8 +862,158 @@
           </div>
         </div>
 
-        <!-- CARD 3: NOVEL "US, EVENTUALLY" + PEMUTAR MUSIK LAGU OST KHUSUS -->
-        <div class="lg:col-span-12 glass-panel rounded-3xl p-6 sm:p-10 border border-limeAccent/30 relative overflow-hidden">
+        <!-- CARD 3: FINARA — ALL-IN-ONE SMART FINANCE WEB APP -->
+        <div data-catalog-category="digital" class="lg:col-span-12 glass-panel rounded-3xl p-6 sm:p-10 border border-[#2C5E4F]/50 hover:border-[#68D391]/60 transition-all duration-300 relative overflow-hidden group">
+          <!-- Ambient Glow Background: Sage Green & Soft Lime -->
+          <div class="absolute -top-24 -right-24 w-80 h-80 bg-[#2C5E4F]/20 rounded-full blur-3xl pointer-events-none group-hover:bg-[#2C5E4F]/35 transition-all duration-700"></div>
+          <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-limeAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+          <div class="flex flex-col lg:flex-row items-center gap-6 sm:gap-10 relative z-10">
+            
+            <!-- Visual / Thumbnail Kartu: Mockup UI Finara (Sage Green #2C5E4F & Warm Cream #F5F6F4) -->
+            <div class="w-full lg:w-[380px] shrink-0 group/mockup">
+              <div class="w-full rounded-2xl overflow-hidden border border-[#2C5E4F]/60 shadow-2xl bg-[#0F1E19] relative transition-all duration-500 group-hover/mockup:border-[#68D391]/80 group-hover/mockup:shadow-[0_12px_36px_rgba(44,94,79,0.4)]">
+                
+                <!-- Mockup App Header (Sage Green #2C5E4F) -->
+                <div class="bg-[#2C5E4F] p-4 text-white flex items-center justify-between border-b border-[#3b7563]">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-[#F5F6F4] text-[#2C5E4F] flex items-center justify-center font-syne font-extrabold text-sm shadow">
+                      F
+                    </div>
+                    <div>
+                      <div class="font-syne font-bold text-sm tracking-wide text-[#F5F6F4]">Finara</div>
+                      <div class="text-[10px] font-mono text-[#D1E7DD] opacity-90">Smart Finance App</div>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded-full bg-black/25 text-[#D1E7DD] text-[10px] font-mono font-semibold border border-white/10">
+                    Web App • v2.4
+                  </span>
+                </div>
+
+                <!-- Mockup App Body (Warm Cream #F5F6F4) -->
+                <div class="bg-[#F5F6F4] p-4 sm:p-5 text-zinc-900 space-y-3 select-none">
+                  <!-- 3 Situasi Mode Switcher Preview -->
+                  <div class="grid grid-cols-3 gap-1 p-1 rounded-xl bg-[#E5E7E2] text-[10px] font-syne font-bold text-center">
+                    <div class="py-1 rounded-lg bg-[#2C5E4F] text-[#F5F6F4] shadow-sm">Pribadi</div>
+                    <div class="py-1 rounded-lg text-zinc-600">Pasangan</div>
+                    <div class="py-1 rounded-lg text-zinc-600">UMKM</div>
+                  </div>
+
+                  <!-- Saldo Card Inside Mockup -->
+                  <div class="p-3.5 rounded-xl bg-gradient-to-br from-[#2C5E4F] to-[#1A382F] text-[#F5F6F4] shadow-md space-y-1 relative overflow-hidden">
+                    <div class="flex items-center justify-between text-[10px] font-mono opacity-85">
+                      <span>Total Saldo Terkelola</span>
+                      <span class="flex items-center gap-1 text-[#A7F3D0]">
+                        <span class="w-1.5 h-1.5 rounded-full bg-[#A7F3D0] animate-pulse"></span>
+                        Spreadsheet Sync
+                      </span>
+                    </div>
+                    <div class="font-syne font-extrabold text-xl sm:text-2xl tracking-tight text-white">
+                      Rp 18.450.000
+                    </div>
+                    <div class="flex items-center justify-between pt-1 text-[10px] font-mono text-[#D1E7DD]">
+                      <span>Cashflow Bulan Ini</span>
+                      <span class="text-[#A7F3D0] font-bold">+24.5% Hemat</span>
+                    </div>
+                  </div>
+
+                  <!-- Quick Feature Highlights Inside Mockup -->
+                  <div class="grid grid-cols-2 gap-2 text-[10px]">
+                    <div class="p-2.5 rounded-xl bg-white border border-[#E0E2DC] shadow-xs space-y-1">
+                      <div class="flex items-center gap-1.5 font-bold text-[#2C5E4F]">
+                        <svg class="w-3.5 h-3.5 text-[#2C5E4F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>Scan Struk AI</span>
+                      </div>
+                      <p class="text-zinc-500 text-[9px] leading-tight">Otomatis isi form dari foto nota/transfer</p>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-white border border-[#E0E2DC] shadow-xs space-y-1">
+                      <div class="flex items-center gap-1.5 font-bold text-[#2C5E4F]">
+                        <svg class="w-3.5 h-3.5 text-[#2C5E4F]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                        <span>Alokasi Adaptif AI</span>
+                      </div>
+                      <p class="text-zinc-500 text-[9px] leading-tight">Bebas kaku 50/30/20, hitung rasio realistis AI</p>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Footer Inside Mockup -->
+                  <div class="flex items-center justify-between text-[9px] font-mono text-zinc-500 pt-1 border-t border-[#E0E2DC]">
+                    <span>🔒 Database Google Sheet Terpisah</span>
+                    <span class="text-[#2C5E4F] font-bold">1-Klik PWA</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Right Column: Product Info & Actions -->
+            <div class="flex-1 space-y-4 text-center lg:text-left">
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                <span class="px-3 py-1 rounded-full bg-[#2C5E4F]/30 text-[#68D391] border border-[#2C5E4F]/60 text-xs font-mono font-bold flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#68D391] animate-pulse"></span>
+                  Featured • Web App
+                </span>
+                <span class="px-2.5 py-1 rounded-full bg-white/10 text-zinc-300 text-xs font-mono">
+                  PWA • Multi-Platform
+                </span>
+              </div>
+
+              <h3 class="font-syne font-bold text-2xl sm:text-3xl text-white">
+                Finara — All-in-One Smart Finance
+              </h3>
+
+              <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                Aplikasi pencatatan keuangan pintar untuk Pribadi, Pasangan, hingga Kelompok & UMKM dengan database Google Spreadsheet terpisah.
+              </p>
+
+              <!-- Tag Fitur Utama (Pill Badges Ringkas) -->
+              <div class="flex flex-wrap gap-2 justify-center lg:justify-start pt-1">
+                <span class="text-[11px] font-mono text-[#D1E7DD] bg-[#2C5E4F]/25 border border-[#2C5E4F]/50 px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#68D391]"></span> Scan Struk AI
+                </span>
+                <span class="text-[11px] font-mono text-[#D1E7DD] bg-[#2C5E4F]/25 border border-[#2C5E4F]/50 px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#68D391]"></span> Alokasi Dana Adaptif
+                </span>
+                <span class="text-[11px] font-mono text-[#D1E7DD] bg-[#2C5E4F]/25 border border-[#2C5E4F]/50 px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#68D391]"></span> Buku Kas PDF/Excel
+                </span>
+                <span class="text-[11px] font-mono text-[#D1E7DD] bg-[#2C5E4F]/25 border border-[#2C5E4F]/50 px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#68D391]"></span> Database Terpisah
+                </span>
+              </div>
+
+              <!-- Harga Tunggal (Single All-Access License) -->
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-wrap items-baseline gap-2.5 justify-center lg:justify-start">
+                <span class="text-xs text-zinc-400 font-mono">Investasi:</span>
+                <!-- Harga Coret Halus (Mudah Diedit di Kode) -->
+                <span class="text-sm text-zinc-500 line-through font-mono">Rp 159.000</span>
+                <!-- Harga Utama Spesial (Mudah Diedit di Kode) -->
+                <span class="font-syne font-extrabold text-2xl sm:text-3xl text-limeAccent">Rp 79.000</span>
+                <!-- Keterangan Lisensi -->
+                <span class="text-xs font-mono text-[#A7F3D0] bg-[#2C5E4F]/40 px-3 py-1 rounded-md border border-[#2C5E4F]/60">
+                  Sekali Bayar • Akses Semua Mode
+                </span>
+              </div>
+
+              <!-- Tombol Aksi: Detail Fitur & Checkout WhatsApp -->
+              <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                <!-- Tombol 1: Detail Fitur (Secondary Button) -->
+                <button onclick="openServiceModal('finara')" class="py-3 px-5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-syne font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+                  <span>Detail Fitur</span>
+                  <svg class="w-4 h-4 text-limeAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </button>
+                <!-- Tombol 2: Beli via WhatsApp (Primary CTA Button) -->
+                <a href="https://wa.me/6282290739099?text=Halo%20Arthzr%20Creative%20Studio%2C%20saya%20ingin%20membeli%20akses%20penuh%20Finara%20App%20(All-in-One%20License%20-%20Rp%2079.000).%20Mohon%20info%20pembayaran%20QRIS-nya." target="_blank" rel="noopener noreferrer" class="py-3 px-6 rounded-xl bg-limeAccent hover:bg-lime-300 text-pitch font-syne font-extrabold text-xs uppercase tracking-wider shadow-glow-lime-sm transition-all transform hover:scale-[1.01] flex items-center justify-center gap-2">
+                  <span>Beli via WhatsApp</span>
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 4: NOVEL "US, EVENTUALLY" + PEMUTAR MUSIK LAGU OST KHUSUS -->
+        <div data-catalog-category="digital" class="lg:col-span-12 glass-panel rounded-3xl p-6 sm:p-10 border border-limeAccent/30 relative overflow-hidden">
           <div class="flex flex-col md:flex-row items-center gap-6 sm:gap-10">
             
             <!-- Cover Novel -->
@@ -1845,6 +2008,141 @@
             </div>
           </div>
         `
+      },
+      finara: {
+        badge: 'PRODUK DIGITAL • ALL-IN-ONE LICENSE',
+        title: 'Finara — Smart Finance Web App',
+        waText: 'Halo Arthzr Creative Studio, saya ingin membeli akses penuh Finara App (All-in-One License - Rp 79.000). Mohon info pembayaran QRIS-nya.',
+        btnText: 'Beli via WhatsApp (Rp 79.000)',
+        html: `
+          <div class="space-y-4 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            <!-- Price Highlight Banner -->
+            <div class="p-3.5 rounded-2xl bg-[#2C5E4F]/25 border border-[#2C5E4F]/70 flex items-center justify-between text-xs">
+              <div>
+                <span class="text-zinc-400 line-through text-[11px] block font-mono">Rp 159.000</span>
+                <div class="flex items-baseline gap-2">
+                  <span class="font-syne font-extrabold text-limeAccent text-lg sm:text-xl">Rp 79.000</span>
+                  <span class="text-[10px] text-[#A7F3D0] font-mono">/ Lisensi Penuh</span>
+                </div>
+                <span class="text-[10px] text-zinc-400 block font-mono">Sekali Bayar • Akses Semua Mode Selamanya</span>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-limeAccent text-pitch text-[10px] font-syne font-bold shadow-glow-lime-sm">
+                Hemat 50%
+              </span>
+            </div>
+
+            <!-- 1. 1 Aplikasi untuk 3 Situasi -->
+            <div class="space-y-2">
+              <h5 class="text-xs font-mono uppercase text-limeAccent font-bold tracking-wider flex items-center gap-1.5">
+                <span>🔄</span> 1 Aplikasi untuk 3 Situasi Kehidupan
+              </h5>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                  <div class="font-syne font-bold text-white text-xs flex items-center gap-1">
+                    <span>👤</span> Mode Pribadi
+                  </div>
+                  <p class="text-[11px] text-zinc-400 leading-relaxed">
+                    Pencatatan harian kilat, monitor kuota jajan adaptif agar tidak overbudget, dan tracking tabungan target.
+                  </p>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                  <div class="font-syne font-bold text-white text-xs flex items-center gap-1">
+                    <span>👫</span> Mode Pasangan
+                  </div>
+                  <p class="text-[11px] text-zinc-400 leading-relaxed">
+                    Transparansi finansial berdua, alokasi dana patungan, wishlist bersama, serta catatan internal interaktif.
+                  </p>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                  <div class="font-syne font-bold text-white text-xs flex items-center gap-1">
+                    <span>👥</span> Mode Kelompok / UMKM
+                  </div>
+                  <p class="text-[11px] text-zinc-400 leading-relaxed">
+                    Manajemen kas operasional, pelacakan bukti transfer/bayar, rekap utang-piutang, dan audit tim transparan.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. 6 Fitur Unggulan -->
+            <div class="space-y-2">
+              <h5 class="text-xs font-mono uppercase text-limeAccent font-bold tracking-wider flex items-center gap-1.5">
+                <span>⚡</span> 6 Fitur Unggulan Finara
+              </h5>
+              <div class="grid grid-cols-1 gap-2 text-xs">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-limeAccent/20 text-limeAccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                  <div>
+                    <strong class="text-white text-xs block font-syne font-bold">Scan Struk & Bukti Transfer AI</strong>
+                    <span class="text-zinc-400 text-[11px]">Cukup foto struk belanja atau bukti transfer, OCR AI otomatis mengekstrak nominal, tanggal, serta kategori tanpa perlu ketik manual.</span>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-limeAccent/20 text-limeAccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                  <div>
+                    <strong class="text-white text-xs block font-syne font-bold">Alokasi Dana Adaptif Real-Time (Bebas Kaku 50/30/20)</strong>
+                    <span class="text-zinc-400 text-[11px] leading-relaxed block mt-0.5">Bukan standar kaku 50/30/20. Atur pembagian dana secara manual lengkap dengan evaluasi pintar, atau biarkan AI merekomendasikan rasio ideal secara real-time..</span>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-limeAccent/20 text-limeAccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                  <div>
+                    <strong class="text-white text-xs block font-syne font-bold">Tabel Buku Kas Umum + Export PDF & Excel</strong>
+                    <span class="text-zinc-400 text-[11px]">Tabel akuntansi standar yang rapi dan profesional, siap diunduh menjadi laporan cetak PDF atau spreadsheet Excel kapan pun dibutuhkan.</span>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-limeAccent/20 text-limeAccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</span>
+                  <div>
+                    <strong class="text-white text-xs block font-syne font-bold">Kuota Jajan & Wishlist Auto-Save</strong>
+                    <span class="text-zinc-400 text-[11px]">Proteksi pengeluaran harian/mingguan dengan reminder batas belanja serta kalkulator progres impian barang idaman.</span>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-limeAccent/20 text-limeAccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">5</span>
+                  <div>
+                    <strong class="text-white text-xs block font-syne font-bold">File Database Google Spreadsheet Terpisah & Terisolasi</strong>
+                    <span class="text-zinc-400 text-[11px]">100% kepemilikan dan kedaulatan data ada di Google Drive Anda sendiri. Data terisolasi penuh tanpa risiko diintip server pihak ketiga.</span>
+                  </div>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-start gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-limeAccent/20 text-limeAccent flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">6</span>
+                  <div>
+                    <strong class="text-white text-xs block font-syne font-bold">Akses 1-Klik via Magic Link Tanpa Instalasi Rumit</strong>
+                    <span class="text-zinc-400 text-[11px]">Teknologi Progressive Web App (PWA) instan. Pasang langsung di layar utama smartphone (Android/iOS) atau browser laptop tanpa repot download aplikasi berat di app store.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Alur Aktivasi Singkat -->
+            <div class="space-y-2 pt-1">
+              <h5 class="text-xs font-mono uppercase text-white font-bold tracking-wider flex items-center gap-1.5">
+                <span>🚀</span> Alur Aktivasi Singkat
+              </h5>
+              <div class="p-3.5 rounded-2xl bg-black/70 border border-limeAccent/30 space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-limeAccent animate-pulse"></span>
+                  <span class="text-xs font-mono text-limeAccent font-bold">Aktif Dalam 3 Menit:</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-zinc-300">
+                  <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                    <strong>1. Klik Beli via WhatsApp:</strong> Chat admin kami via format pesan instan.
+                  </div>
+                  <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                    <strong>2. Pembayaran QRIS:</strong> Transfer sekali bayar (Rp 79.000) tanpa biaya langganan.
+                  </div>
+                  <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                    <strong>3. Terima Link Aktivasi:</strong> Dapatkan Magic Link 1-klik & spreadsheet template pribadi.
+                  </div>
+                  <div class="p-2 rounded-lg bg-white/5 border border-white/5">
+                    <strong>4. Langsung Pakai:</strong> Buka & pasang di layar utama HP untuk penggunaan selamanya.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `
       }
     };
 
@@ -1855,7 +2153,9 @@
       document.getElementById('modal-badge').innerText = data.badge;
       document.getElementById('modal-title').innerText = data.title;
       document.getElementById('modal-content').innerHTML = data.html;
-      document.getElementById('modal-wa-btn').href = "https://wa.me/6282290739099?text=" + encodeURIComponent(data.waText);
+      const waBtn = document.getElementById('modal-wa-btn');
+      waBtn.href = "https://wa.me/6282290739099?text=" + encodeURIComponent(data.waText);
+      waBtn.innerText = data.btnText || "Hubungi via WhatsApp";
       const modal = document.getElementById('service-modal');
       if (modal) modal.classList.remove('hidden');
     }
@@ -1864,6 +2164,26 @@
       playUiClickSound();
       const modal = document.getElementById('service-modal');
       if (modal) modal.classList.add('hidden');
+    }
+
+    /* -------------------------------------------------------------------------
+       5B. FILTER KATEGORI KATALOG LAYANAN & PRODUK DIGITAL
+       ------------------------------------------------------------------------- */
+    function filterCatalog(category, btn) {
+      if (typeof playUiClickSound === 'function') playUiClickSound();
+      document.querySelectorAll('.catalog-filter-btn').forEach(function(b) {
+        b.className = "catalog-filter-btn px-4 py-2 rounded-xl text-xs font-syne font-bold transition-all bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white border border-white/5";
+      });
+      if (btn) {
+        btn.className = "catalog-filter-btn px-4 py-2 rounded-xl text-xs font-syne font-bold transition-all bg-limeAccent text-pitch shadow-glow-lime-sm";
+      }
+      document.querySelectorAll('[data-catalog-category]').forEach(function(card) {
+        if (category === 'all' || card.getAttribute('data-catalog-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
     }
 
     /* -------------------------------------------------------------------------
